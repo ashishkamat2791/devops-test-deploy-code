@@ -6,6 +6,8 @@ resource "aws_instance" "buildit_dev_node" {
     instance_type = "t2.micro"
     ami           = "${lookup(var.AMIS, var.AWS_REGION)}"
     key_name = "${aws_key_pair.mykey.key_name}"
+    vpc_security_group_ids = ["${aws_security_group.main_dev_sg.id}"]
+    subnet_id              = "${aws_subnet.main-public-1.id}"   
 
   provisioner "local-exec" {
     command = <<EOD
