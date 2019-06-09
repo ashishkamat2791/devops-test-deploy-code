@@ -12,9 +12,9 @@ resource "aws_instance" "buildit_dev_node" {
   provisioner "local-exec" {
     command = <<EOD
     sudo -i
-   sudo   apt-get install curl python-software-properties
+   sudo   apt-get install curl python-software-properties -y
     curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-   sudo apt-get install nodejs
+   sudo apt-get install nodejs -y
     node --version
     npm --version
 EOD

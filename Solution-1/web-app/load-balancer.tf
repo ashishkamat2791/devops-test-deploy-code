@@ -9,7 +9,7 @@
     security_groups = ["${aws_security_group.buildit_public_sg.id}"]
   
     listener {
-      instance_port     = 80
+      instance_port     = 3000
       instance_protocol = "http"
       lb_port           = 80
       lb_protocol       = "http"
