@@ -17,6 +17,10 @@ resource "aws_instance" "buildit_dev_node" {
    sudo apt-get install nodejs -y
     node --version
     npm --version
+    git clone https://github.com/buildit/devops-test.git
+    cd devops-test
+    npm install && npm start &
+
 EOD
 
   }
